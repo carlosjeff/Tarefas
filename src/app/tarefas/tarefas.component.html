@@ -1,0 +1,48 @@
+<section class="tarefas">
+  <div class="tarefas__container ">
+    <div class="tarefas__cabecalho">
+      <h2 class="tarefas__titulo">Para fazer</h2>
+      <button class="tarefas__add" (click)="openDialog()">
+        <mat-icon class="icon">add</mat-icon>
+      </button>
+
+    </div>
+    <div class="tarefas__item" *ngFor="let tarefa of getTarefas('Para fazer')">
+      <h3 class="item__titulo">{{tarefa.titulo | titlecase}}</h3>
+      <button class="item__data">
+       <mat-icon class="data-icon">schedule</mat-icon>
+       {{tarefa.dataInicio | date}} - {{tarefa.dataConclusao | date}}
+      </button>
+      <div class="item__acoes">
+        <button class="acoes__button button-edit"><mat-icon class="icon">edit</mat-icon></button>
+        <button class="acoes__button button-delete"><mat-icon class="icon">delete</mat-icon></button>
+      </div>
+    </div>
+  </div>
+  <div class="tarefas__container">
+      <h2 class="tarefas__titulo">Fazendo</h2>
+      <div class="tarefas__item">
+        <h3 class="item__titulo">teste isso é teste para saber se ele sai doi conteiner</h3>
+        <button class="item__data">
+         <mat-icon class="data-icon">schedule</mat-icon> 09 de set - 12 de set de 2022
+        </button>
+        <div class="item__acoes">
+          <button class="acoes__button button-edit"><mat-icon class="icon">edit</mat-icon></button>
+          <button class="acoes__button button-delete"><mat-icon class="icon">delete</mat-icon></button>
+        </div>
+      </div>
+    </div>
+  <div class="tarefas__container">
+      <h2 class="tarefas__titulo">Concluída</h2>
+      <div class="tarefas__item">
+        <h3 class="item__titulo">teste isso é teste para saber se ele sai doi conteiner</h3>
+        <button class="item__data">
+         <mat-icon class="data-icon">schedule</mat-icon> 09 de set - 12 de set de 2022
+        </button>
+        <div class="item__acoes">
+          <button class="acoes__button button-edit"><mat-icon class="icon">edit</mat-icon></button>
+          <button class="acoes__button button-delete"><mat-icon class="icon">delete</mat-icon></button>
+        </div>
+      </div>
+    </div>
+</section>

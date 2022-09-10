@@ -1,0 +1,154 @@
+.tarefas{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1em;
+  margin: 1em 10em;
+  box-sizing: border-box;
+}
+
+.tarefas__container{
+  background-color: #eceff1;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 8px;
+  position: relative;
+  row-gap: 1em;
+}
+
+.tarefas__cabecalho{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tarefas__titulo{
+  font-size: 1.2rem;
+  text-align: start;
+  width: 100%;
+}
+
+.tarefas__add{
+  font-size: 1.2rem;
+  padding: .4em;
+  border-radius: 8px;
+  display: flex;
+  align-items:center ;
+  justify-content: center;
+  background-color: transparent;
+  color: black;
+  border: none;
+  top: 0;
+  right: 1em;
+  cursor: pointer;
+}
+
+.tarefas__add:hover{
+  background-color: white;
+}
+
+.tarefas__item{
+  background-color: #fafafa;
+  padding: 1em;
+  display: inline-block;
+  flex-direction: column;
+  position: relative;
+  border-radius: 8px;
+  transition: all 500ms;
+}
+
+.item__titulo{
+  font-size: 1rem;
+}
+
+.item__data{
+  padding: 0.5em;
+  background-color: #cfd8dc;
+  border-radius: 8px;
+  color: black;
+  text-align: center;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.data-icon{
+  font-size: 1.2rem;
+}
+
+.item__acoes{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.5em;
+  opacity: 0;
+  transition: all 500ms;
+  display: flex;
+  gap: 0.5em;
+}
+
+.acoes__button{
+    border: none;
+    box-sizing: border-box;
+    padding: 0.3em;
+    border-radius: 5px;
+    height: 30px;
+    cursor: pointer;
+
+}
+
+.button-edit{
+  background-color: #1565c0;
+  color: white;
+
+}
+
+.button-delete{
+  background-color: #c62828;
+  color: white;
+}
+
+.icon{
+  font-size: 1.2rem;
+}
+
+.tarefas__item:hover {
+
+  background-color: #cfd8dc;
+
+  .item__acoes{
+    opacity: 1;
+  }
+}
+
+.button-edit:hover{
+  background-color: #0d47a1;
+}
+
+.button-delete:hover{
+  background-color: #b71c1c;
+}
+
+
+.tarefas__item:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: 0px;
+  height: 0px;
+  border-bottom: 0px solid #f4f4f4;
+  border-right: 0px solid #393939;
+  box-shadow: 5px 5px 8px rgba(64, 64, 64, 0.5);
+  // opacity: 0;
+  transition-duration: 800ms;
+}
+
+.tarefas__item:hover::before{
+  // opacity: 1;
+  border-bottom: 30px solid #f4f4f4;
+  border-right: 30px solid #393939;
+}

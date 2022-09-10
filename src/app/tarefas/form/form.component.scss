@@ -1,0 +1,14 @@
+.form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 1em;
+}
+
+.col{
+  grid-column: span 2;
+}
+
+.col-2{
+  grid-column: span 1;
+}
