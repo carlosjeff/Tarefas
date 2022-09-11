@@ -18,13 +18,16 @@ export class FormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               public dialogRef: MatDialogRef<FormComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: Tarefa) { }
+              @Inject(MAT_DIALOG_DATA) public data: Partial<Tarefa>) { }
 
   ngOnInit(): void {
     this.buildForm();
 
-    this.dialogRef.afterOpened().subscribe(() =>
-      this.tarefasForm.setValue(this.data)
+    this.dialogRef.afterOpened().subscribe(() =>{
+
+      console.log(this.data)
+      this.tarefasForm.patchValue(this.data)
+    }
     )
   }
 
@@ -34,10 +37,12 @@ export class FormComponent implements OnInit {
 
   buildForm(){
     this.tarefasForm = this.formBuilder.group({
+      id: [''],
       titulo: [''],
       status: [''],
       dataInicio: [''],
-      dataConclusao: ['']
+      dataConclusao: [''],
+      index: [0]
     })
   }
 

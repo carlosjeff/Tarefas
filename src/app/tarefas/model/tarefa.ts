@@ -1,7 +1,9 @@
 export interface Tarefa{
 
+  id: string;
   titulo: string;
   status: string;
-  dataInicio: Date | null;
-  dataConclusao: Date | null;
+  dataInicio: Date;
+  dataConclusao: Date ;
+  index: number;
 }
