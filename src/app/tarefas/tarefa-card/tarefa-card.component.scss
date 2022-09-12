@@ -1,0 +1,103 @@
+.card{
+  background-color: #fafafa;
+  border-radius: 8px;
+  margin-top: 1em;
+  padding: 1em;
+  position: relative;
+  transition: background-color 500ms;
+}
+
+.card__title{
+  font-size: 1rem;
+}
+
+.card-expired{
+
+  .card__date{
+    background-color: #d32f2f;
+    color: white;
+  }
+  .card__title{
+    color: #d32f2f;
+  }
+}
+
+.card__date{
+
+  align-items: center;
+  background-color: #cfd8dc;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: black;
+  display: flex;
+  justify-content: center;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.card__action{
+  bottom: 0;
+  display: flex;
+  gap: 0.5em;
+  opacity: 0;
+  padding: 0.5em;
+  position: absolute;
+  right: 0;
+  transition: all 500ms;
+}
+
+.action__button{
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 30px;
+  padding: 0.3em;
+}
+
+.button-edit{
+  background-color: #1565c0;
+  color: white;
+
+}
+
+.button-delete{
+  background-color: #c62828;
+  color: white;
+}
+
+.card:hover {
+
+  background-color: #cfd8dc;
+
+  .card__action{
+    opacity: 1;
+  }
+}
+
+.button-edit:hover{
+  background-color: #0d47a1;
+}
+
+.button-delete:hover{
+  background-color: #b71c1c;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  border-bottom: 0px solid #f4f4f4;
+  border-right: 0px solid #393939;
+  box-shadow: 5px 5px 8px rgba(64, 64, 64, 0.5);
+  height: 0px;
+  right: 0%;
+  top: 0%;
+  transition-duration: 800ms;
+  width: 0px;
+}
+
+.card:hover::before{
+  border-bottom: 30px solid #f4f4f4;
+  border-right: 30px solid #393939;
+}

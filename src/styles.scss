@@ -1,4 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #cfd8dc;
+ }
+
+
+.icon{
+  font-size: 1.2rem;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-responsive {
+  width: 600px;
+}
+
+@media only screen and (max-width: 760px) {
+  .dialog-responsive {
+      width: 100%;
+  }
+}

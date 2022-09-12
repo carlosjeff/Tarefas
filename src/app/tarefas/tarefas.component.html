@@ -1,80 +1,48 @@
 <section class="tarefas" cdkDropListGroup>
-  <div class="tarefas__container "
-    id="paraFazer"
-    cdkDropList
-    [cdkDropListData]="parafazer"
-    (cdkDropListDropped)="drop($event)"
-  >
+
+  <div class="tarefas__container " id="paraFazer" cdkDropList [cdkDropListData]="parafazer"
+    (cdkDropListDropped)="drop($event)">
+
     <div class="tarefas__cabecalho">
       <h2 class="tarefas__titulo">Para fazer</h2>
       <button class="tarefas__add" (click)="add('Para fazer')">
         <mat-icon class="icon">add</mat-icon>
       </button>
+    </div>
 
-    </div>
-    <div class="tarefas__item" [ngClass]="{'tarefas__item-atrasada': dataAtrasada(tarefa.dataConclusao)}" *ngFor="let tarefa of parafazer" cdkDrag>
-      <h3 class="item__titulo">{{tarefa.titulo | titlecase}}</h3>
-      <button class="item__data">
-       <mat-icon class="data-icon">schedule</mat-icon>
-       {{tarefa.dataInicio | date}} - {{tarefa.dataConclusao | date}}
-      </button>
-      <div class="item__acoes">
-        <button class="acoes__button button-edit" (click)="edit(tarefa)"><mat-icon class="icon">edit</mat-icon></button>
-        <button class="acoes__button button-delete" (click)="delete(tarefa)"><mat-icon class="icon">delete</mat-icon></button>
-      </div>
-    </div>
+    <app-tarefa-card [tarefas]="parafazer" (edit)="edit($event)" (delete)="delete($event)">
+    </app-tarefa-card>
+
   </div>
 
-  <div class="tarefas__container "
-    id="fazendo"
-    cdkDropList
-    [cdkDropListData]="fazendo"
-    (cdkDropListDropped)="drop($event)"
-  >
+  <div class="tarefas__container " id="fazendo" cdkDropList [cdkDropListData]="fazendo"
+    (cdkDropListDropped)="drop($event)">
+
     <div class="tarefas__cabecalho">
       <h2 class="tarefas__titulo">Fazendo</h2>
       <button class="tarefas__add" (click)="add('Fazendo')">
         <mat-icon class="icon">add</mat-icon>
       </button>
+    </div>
 
-    </div>
-    <div class="tarefas__item" *ngFor="let tarefa of fazendo" cdkDrag>
-      <h3 class="item__titulo">{{tarefa.titulo | titlecase}}</h3>
-      <button class="item__data">
-       <mat-icon class="data-icon">schedule</mat-icon>
-       {{tarefa.dataInicio | date}} - {{tarefa.dataConclusao | date}}
-      </button>
-      <div class="item__acoes">
-        <button class="acoes__button button-edit"><mat-icon class="icon">edit</mat-icon></button>
-        <button class="acoes__button button-delete"><mat-icon class="icon">delete</mat-icon></button>
-      </div>
-    </div>
+    <app-tarefa-card [tarefas]="fazendo" (edit)="edit($event)" (delete)="delete($event)">
+    </app-tarefa-card>
+
   </div>
 
-  <div class="tarefas__container "
-    id="concluida"
-    cdkDropList
-    [cdkDropListData]="concluida"
-    (cdkDropListDropped)="drop($event)"
-  >
+  <div class="tarefas__container " id="concluida" cdkDropList [cdkDropListData]="concluida"
+    (cdkDropListDropped)="drop($event)">
+
     <div class="tarefas__cabecalho">
       <h2 class="tarefas__titulo">Concluída</h2>
       <button class="tarefas__add" (click)="add('Concluída')">
         <mat-icon class="icon">add</mat-icon>
       </button>
+    </div>
 
-    </div>
-    <div class="tarefas__item" *ngFor="let tarefa of concluida" cdkDrag>
-      <h3 class="item__titulo">{{tarefa.titulo | titlecase}}</h3>
-      <button class="item__data">
-       <mat-icon class="data-icon">schedule</mat-icon>
-       {{tarefa.dataInicio | date}} - {{tarefa.dataConclusao | date}}
-      </button>
-      <div class="item__acoes">
-        <button class="acoes__button button-edit"><mat-icon class="icon">edit</mat-icon></button>
-        <button class="acoes__button button-delete"><mat-icon class="icon">delete</mat-icon></button>
-      </div>
-    </div>
+    <app-tarefa-card [tarefas]="concluida" (edit)="edit($event)" (delete)="delete($event)" [highlightExpiredDate]="false">
+    </app-tarefa-card>
+
   </div>
 
 </section>

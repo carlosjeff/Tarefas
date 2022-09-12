@@ -1,0 +1,55 @@
+<div mat-dialog-title class="header">
+  <h1>Adicionar uma tarefa</h1>
+  <a mat-dialog-close class="action__close"> <mat-icon class="icon">clear</mat-icon></a>
+</div>
+<div mat-dialog-content>
+  <form class="form" [formGroup]="tarefasForm">
+
+    <mat-form-field appearance="outline" class="col">
+      <mat-label>Titulo</mat-label>
+      <input matInput placeholder="Placeholder" formControlName="titulo">
+      <mat-error *ngIf="tarefasForm.get('titulo')?.hasError('required')">
+        Este Campo é Obrigatório!
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline" class="col-2" color="#00000">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option *ngFor="let data of status" [value]="data">
+          {{data}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="tarefasForm.get('status')?.hasError('required')">
+        Este Campo é Obrigatório!
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline"  class="col-2">
+      <mat-label>Data de Inicio e final</mat-label>
+      <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate formControlName="dataInicio" placeholder="Start date">
+        <input matEndDate formControlName="dataConclusao" placeholder="End date">
+      </mat-date-range-input>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+      <mat-error *ngIf="tarefasForm.get('dataInicio')?.hasError('required') ||
+        tarefasForm.get('dataConclusao')?.hasError('required')">
+        Este Campo é Obrigatório!
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="actions">
+  <button class="button" mat-dialog-close >
+    <mat-icon class="icon">clear</mat-icon>
+    Cancelar
+  </button>
+  <button class="button" (click)="close()" [disabled]="formHasError()"
+    [ngClass]="{'button-save': !tarefasForm.get('id')?.value, 'button-edit' : tarefasForm.get('id')?.value}">
+    <mat-icon class="icon">{{tarefasForm.get('id')?.value ? 'edit' : 'add'}}</mat-icon>
+    {{tarefasForm.get('id')?.value ? 'Editar' : 'Salvar'}}
+  </button>
+
+</div>

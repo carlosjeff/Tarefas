@@ -1,0 +1,17 @@
+
+<div class="card" [ngClass]="{'card-expired': dateExpired(tarefa.dataConclusao) && highlightExpiredDate}"
+  *ngFor="let tarefa of tarefas" cdkDrag >
+  <h3 class="card__title">{{tarefa.titulo | titlecase}}</h3>
+  <button class="card__date">
+   <mat-icon class="icon">schedule</mat-icon>
+   {{tarefa.dataInicio | date}} - {{tarefa.dataConclusao | date}}
+  </button>
+  <div class="card__action">
+    <button class="action__button button-edit" (click)="editTarefa(tarefa)">
+      <mat-icon class="icon">edit</mat-icon>
+    </button>
+    <button class="action__button button-delete" (click)="deleteTarefa(tarefa)">
+      <mat-icon class="icon">delete</mat-icon>
+    </button>
+  </div>
+</div>

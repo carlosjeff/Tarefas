@@ -1,0 +1,98 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.action__close{
+  padding: .3em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action__close:hover{
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
+.form{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 1em;
+}
+
+.col{
+  grid-column: span 2;
+}
+
+.col-2{
+  grid-column: span 1;
+}
+
+.actions{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 1em;
+}
+
+.button{
+  padding: 0.5em 1em;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover{
+  background-color: #bdbdbd;
+}
+
+.button-save{
+  background-color: #22C55E;
+  color: white;
+}
+
+.button-save:hover{
+  background-color: #16A34A;
+}
+
+.button-save:disabled{
+  background-color: #16a34a9c;
+}
+
+.button-edit{
+  background-color: #1565c0;
+  color: white;
+}
+
+.button-edit:hover{
+  background-color: #0d47a1;
+}
+
+@media only screen and (max-width : 768px) {
+  .form{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .col{
+    grid-column: span 1;
+  }
+
+  .col-2{
+    grid-column: span 1;
+  }
+
+  .actions{
+    flex-direction: column-reverse;
+    align-items: inherit;
+    row-gap: 1em;
+  }
+}
