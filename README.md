@@ -2,8 +2,6 @@
 
 # Sobre o projeto
 
-https://wmazoni-sds1.netlify.app
-
 Projeto proposto para desmostrar o conhecimento em Angular construido uma apricação de lista de tarefas com estilo kanban e ela consiste em adição, alteração, exclusão e listagem dos itens.
 
 
