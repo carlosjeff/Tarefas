@@ -1,5 +1,7 @@
 # Lista de tarefas 
 
+https://carlosjeff.github.io/Tarefas/
+
 # Sobre o projeto
 
 Projeto proposto para desmostrar o conhecimento em Angular construido uma apricação de lista de tarefas com estilo kanban e ela consiste em adição, alteração, exclusão e listagem dos itens.
